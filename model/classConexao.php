@@ -2,8 +2,8 @@
 
 class Conection 
 {
-    private static string $table;
-    private static string $join = '';
+    private string $table;
+    private string $join = '';
 
     private PDO $conection;
     private static string $dbname;
@@ -13,8 +13,8 @@ class Conection
 
     public function __construct(string $table) 
     {
-        self::$table = $table;
-        self::setConection();
+        $this->table = $table;
+        $this->setConection();
     }
 
     public static function config(string $dbname, string $dbhost, string $dbuser, string $dbpassword): void
@@ -25,19 +25,19 @@ class Conection
         self::$dbpassword = $dbpassword;
     }
 
-    public static function setConection(): void
+    public function setConection(): void
     {
         try {
-            self::$conection = new PDO("mysql:dbname=".self::$dbname.";host=".self::$dbhost, self::$dbuser, self::$dbpassword);
+            $this->conection = new PDO("mysql:dbname=".self::$dbname.";host=".self::$dbhost, self::$dbuser, self::$dbpassword);
         } catch (\PDOException $th) {
             echo('<script>console.error("ERROR CONECTION")</script>');
         }
     }
 
-    public static function execute(string $query, array $values = []): PDOStatement|false
+    public function execute(string $query, array $values = []): PDOStatement|false
     {
         try {
-            $statement = self::$conection->prepare($query);
+            $statement = $this->conection->prepare($query);
             $statement->execute($values);
             return $statement;
         } catch (\Throwable $th) {
@@ -46,24 +46,24 @@ class Conection
         }
     }
 
-    public static function join(string $foreignTable, string $match, string $joinType = "INNER JOIN"): void
+    public function join(string $foreignTable, string $match, string $joinType = "INNER JOIN"): void
     {
-        self::$join .= " {$joinType} {$foreignTable} ON {$match} ";
+       $this->join .= " {$joinType} {$foreignTable} ON {$match} ";
         
     }
 
-    public static function insert(array $values): bool
+    public function insert(array $values): bool
     {
         $fields = array_keys($values);
         $binds = array_pad([],count($fields),'?');
 
-        $query = "INSERT INTO ".self::$table."(".implode(",", $fields).") VALUES (".implode(",", $binds).")";
-        $result = self::execute($query, array_values($values));
+        $query = "INSERT INTO ".$this->table."(".implode(",", $fields).") VALUES (".implode(",", $binds).")";
+        $result = $this->execute($query, array_values($values));
 
         return gettype($result) === "object" ? true : false;
     }
 
-    public static function select(
+    public function select(
         string $where = null, 
         string $order = null,  
         string $limit = null, 
@@ -73,30 +73,30 @@ class Conection
         isset($where) ? $where = ' WHERE ' . $where . ' ' : $where = '';
         isset($order) ? $order = ' ORDER BY ' . $order . ' ' : $order = '';
         isset($limit) ? $limit = ' LIMIT ' . $limit . ' ' : $limit = '';
-        isset(self::$join) ? $join = self::$join : $join = '';
+        isset($this->join) ? $join =$this->join : $join = '';
 
-        $query = "SELECT {$fields} FROM " . self::$table . $join . $where . $order . $limit;
+        $query = "SELECT {$fields} FROM " . $this->table . $join . $where . $order . $limit;
 
-        return self::execute($query);
+        return $this->execute($query);
     }
 
-    public static function update(string $where, array $values): bool
+    public function update(string $where, array $values): bool
     {
         isset($where) ? $where = ' WHERE ' . $where . ' ' : $where = '';
 
         $fields = array_keys($values);
-        $query = "UPDATE ".self::$table." SET ".implode("=?,", $fields)."=? ". $where;
-        $result = self::execute($query, array_values($values));
+        $query = "UPDATE ".$this->table." SET ".implode("=?,", $fields)."=? ". $where;
+        $result = $this->execute($query, array_values($values));
 
         return gettype($result) === "object" ? true : false;
     }
 
-    public static function delete(string $where): bool
+    public function delete(string $where): bool
     {
         isset($where) ? $where = ' WHERE ' . $where . ' ' : $where = '';
 
-        $query = "DELETE FROM ".self::$table.$where;
-        $result = self::execute($query);
+        $query = "DELETE FROM ".$this->table.$where;
+        $result = $this->execute($query);
 
         return gettype($result) === "object" ? true : false;
     }
