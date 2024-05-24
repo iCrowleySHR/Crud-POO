@@ -1,7 +1,8 @@
 <?php 
 require_once 'classConexao.php';
 
-class Funcionario{
+class Funcionario
+{
     public static function create(array $values): bool
     { 
         return (new Conection('funcionario'))->insert([
@@ -17,8 +18,10 @@ class Funcionario{
     public static function read(string $where = null, string $order = null,  string $limit = null, string $fields = '*'): array
     {
         $consult = new Conection('funcionario');
+
         $consult->join('cargo','cargo.codCargo = funcionario.codCargo');
         $consult->join('departamento','departamento.codDepartamento = funcionario.codDepartamento');
+        
         return $consult->select($where, $order, $limit, $fields)->fetchAll(PDO::FETCH_ASSOC);
     }
 

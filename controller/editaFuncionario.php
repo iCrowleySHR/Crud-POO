@@ -3,7 +3,7 @@
 require '../../model/classFuncionario.php';
 
 if ($_SERVER['REQUEST_METHOD'] == 'GET') {
-  $value = Funcionario::read('funcional = '.$_GET['cod']);
+    $value = Funcionario::read('funcional = '.$_GET['cod']);
 }
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
@@ -15,6 +15,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         'codDepartamento' => $_POST['codDepartamento'],
         'codCargo'        => $_POST['codCargo']
     ];
-  $result = Funcionario::update('funcional = '.$_GET['cod'], $values);
-  $value = Funcionario::read('funcional = '.$_GET['cod']);
+    $result = Funcionario::update('funcional = '.$_GET['cod'], $values);
+    $value = Funcionario::read('funcional = '.$_GET['cod']);
 }

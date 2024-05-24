@@ -2,4 +2,4 @@
 
 require '../../model/classDepartamento.php';
 
-$resultDepartamento = Departamento::read( null, 'codDepartamento ASC');
+$resultDepartamento = Departamento::read(null, 'codDepartamento ASC');

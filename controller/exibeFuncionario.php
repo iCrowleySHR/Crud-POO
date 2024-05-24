@@ -2,4 +2,4 @@
 
 require '../../model/classFuncionario.php';
 
-$result = Funcionario::read( null, 'funcional ASC');
+$result = Funcionario::read(null, 'funcional ASC');
