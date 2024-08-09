@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <?php 
 require_once 'classConexao.php';
 
@@ -43,3 +44,4 @@ class Funcionario
         return (new Conection('funcionario'))->delete($where);
     }
 }
+

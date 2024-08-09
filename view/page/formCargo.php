@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -43,4 +44,5 @@
   </main>
   <?php include '../layout/footer.php' ?>
 </body>
+
 </html>

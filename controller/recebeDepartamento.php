@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <?php
 
 require '../../model/classDepartamento.php';

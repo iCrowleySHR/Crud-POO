@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <?php
 
 require '../../model/classCargo.php';
