@@ -11,3 +11,5 @@
 
 <!-- Link Css -->
 <link rel="stylesheet" href="<?= URL ?>/view/css/style.css">
+
+<?php include_once '../../controller/DateFormatter.php' ?>

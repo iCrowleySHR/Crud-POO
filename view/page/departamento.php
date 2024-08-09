@@ -21,7 +21,8 @@
             <tr>
               <th scope="col">#</th>
               <th scope="col">Nome</th>
-              <th scope="col">Alteração</th>
+              <th scope="col">Data e Hora</th>
+              <th scope="col">Opções</th>
             </tr>
           </thead>
           <tbody>
@@ -30,7 +31,7 @@
                 <tr>
                   <th scope="row">'.$value['codDepartamento'].'</th>
                   <td>'.$value['nomeDepartamento'].'</td>
-                  <td>'.$value['created_at'].'</td>
+                  <td>'.DateFormatter::format($value['created_at']).'</td>
                   <td class="d-flex">
                     <form action="formEditDepartamento.php" method="get">
                       <button 

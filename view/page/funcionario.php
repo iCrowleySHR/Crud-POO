@@ -23,9 +23,10 @@
               <th scope="col">Cpf</th>
               <th scope="col">Telefone</th>
               <th scope="col">Endereco</th>
+              <th scope="col">Data e Hora</th>
               <th scope="col">Departamento</th>
               <th scope="col">Cargo</th>
-              <th scope="col">Alteração</th>
+              <th scope="col">Opções</th>
             </tr>
           </thead>
           <tbody>
@@ -37,7 +38,7 @@
                   <td>'.$value['cpf'].'</td>
                   <td>'.$value['telefone'].'</td>
                   <td>'.$value['endereco'].'</td>
-                  <td>'.$value['created_at'].'</td>
+                  <td>'.DateFormatter::format($value['created_at']).'</td>
                   <td>'.$value['nomeDepartamento'].'</td>
                   <td>'.$value['nomeCargo'].'</td>
                   <td class="d-flex">

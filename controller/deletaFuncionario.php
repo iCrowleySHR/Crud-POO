@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 <?php
 
 require '../../model/classFuncionario.php';
