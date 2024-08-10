@@ -25,21 +25,21 @@
       </fieldset>
       <button type="submit" class="btn btn-success w-100">Cadastrar</button>
     </form>
-    <?php if (isset($result) && $result) { echo '
+    <?php if (isset($result) && $result) { ?>
       <section class="position-relative" style="width: 400px;">
         <div class="alert alert-success alert-dismissible fade show position-absolute w-100" role="alert">
           <span>Cadastrado com sucesso!</span>
           <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
         </div>
       </section>
-    '; } else if (isset($result) && !$result) { echo '
+    <?php } else if (isset($result) && !$result) {  ?>
       <section class="position-relative" style="width: 400px;">
         <div class="alert alert-danger alert-dismissible fade show position-absolute w-100" role="alert">
           <span>Erro ao cadastrar!</span>
           <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
         </div>
       </section>
-    '; } ?>
+    <?php } ?>
   </main>
   <?php include '../layout/footer.php' ?>
 </body>
