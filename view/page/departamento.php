@@ -13,61 +13,66 @@
     <?php include '../layout/navbar.php' ?>
   </header>
   <main class="m-4 d-flex flex-column">
-    <article style="max-width: 1200px;">
+    <article>
       <h3 class="fw-normal">Departamento</h3>
 
-      <section>
-        <table class="table table-striped">
+      <section class="table-responsive">
+        <table class="table table-striped table-responsive">
           <thead>
             <tr>
               <th scope="col">#</th>
               <th scope="col">Nome</th>
-              <th scope="col">Data e Hora</th>
+              <th scope="col">Data e Hora de criação</th>
+              <th scope="col">Data e Hora da última atualização</th>
               <th scope="col">Opções</th>
             </tr>
           </thead>
           <tbody>
-            <?php if (isset($resultDepartamento) && count($resultDepartamento) > 0) { 
-              foreach ($resultDepartamento as $value) {echo ' 
+          <?php if (isset($resultDepartamento) && count($resultDepartamento) > 0): ?>
+            <?php foreach ($resultDepartamento as $value): ?>
                 <tr>
-                  <th scope="row">'.$value['codDepartamento'].'</th>
-                  <td>'.$value['nomeDepartamento'].'</td>
-                  <td>'.DateFormatter::format($value['created_at']).'</td>
-                  <td class="d-flex">
-                    <form action="formEditDepartamento.php" method="get">
-                      <button 
-                        type="submit" 
-                        name="cod"
-                        class="btn btn-sm btn-warning me-2" 
-                        data-bs-toggle="modal" 
-                        data-bs-target="#formEdit" 
-                        value="'.$value['codDepartamento'].'"
-                      >
-                      Editar
-                    </button>
-                  </form>
-                  <form action="formDeleteDepartamento.php" method="get">
-                    <button 
-                      type="submit" 
-                      name="cod"
-                      class="btn btn-sm btn-danger" 
-                      data-bs-toggle="modal" 
-                      data-bs-target="#formDelete" 
-                      value="'.$value['codDepartamento'].'"
-                    >
-                      Deletar
-                    </button>
-                  </form>
+                    <th scope="row"><?= $value['codDepartamento'] ?></th>
+                    <td><?= $value['nomeDepartamento'] ?></td>
+                    <td><?= DateFormatter::format($value['created_at']) ?></td>
+                    <td><?= empty($value['updated_at']) ? 'Nunca alterado' : DateFormatter::format($value['updated_at']) ?></td>
+                    <td class="d-flex">
+                        <form action="formEditDepartamento.php" method="get">
+                            <button 
+                                type="submit" 
+                                name="cod"
+                                class="btn btn-sm btn-warning me-2" 
+                                data-bs-toggle="modal" 
+                                data-bs-target="#formEdit" 
+                                value="<?= $value['codDepartamento'] ?>"
+                            >
+                                Editar
+                            </button>
+                        </form>
+                        <form action="formDeleteDepartamento.php" method="get">
+                            <button 
+                                type="submit" 
+                                name="cod"
+                                class="btn btn-sm btn-danger" 
+                                data-bs-toggle="modal" 
+                                data-bs-target="#formDelete" 
+                                value="<?= $value['codDepartamento'] ?>"
+                            >
+                                Deletar
+                            </button>
+                        </form>
+                    </td>
                 </tr>
-              ';
-            }} else if (isset($resultDepartamento) && !$resultDepartamento) { echo '
-              <section class="position-relative" style="max-width: 1200px;">
-                <div class="alert alert-danger alert-dismissible fade show position-absolute w-100" role="alert">
-                  <span>Nunhum departamento encontrado!</span>
-                  <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            <?php endforeach; ?>
+          <?php else: ?>
+            <tr>
+              <td colspan="5">
+                <div class="alert alert-danger alert-dismissible fade show w-100" role="alert">
+                    <span>Nenhum departamento encontrado!</span>
+                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
                 </div>
-              </section>
-            '; } ?>
+              </td>
+            </tr>
+          <?php endif; ?>
           </tbody>
         </table>
       </section>

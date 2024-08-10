@@ -17,6 +17,7 @@ class DateFormatter {
     ];
 
     public static function format($dateTimeString) {
+
         $dateTime = DateTime::createFromFormat('Y-m-d H:i:s', $dateTimeString);
         
         if (!$dateTime) {

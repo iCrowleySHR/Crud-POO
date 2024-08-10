@@ -21,7 +21,8 @@ class Cargo
     public static function update(string $where, array $values): bool
     {
         return (new Conection('cargo'))->update($where, [
-            'nomeCargo' => $values['nome']
+            'nomeCargo'     => $values['nome'],
+            'updated_at'    => $values['updated_at']
         ]);
     }
 

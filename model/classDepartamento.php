@@ -21,7 +21,8 @@ class Departamento
     public static function update(string $where, array $values): bool
     {
         return (new Conection('departamento'))->update($where, [
-            'nomeDepartamento' => $values['nome']
+            'nomeDepartamento' => $values['nome'],
+            'updated_at'       => $values['updated_at'] 
         ]);
     }
 

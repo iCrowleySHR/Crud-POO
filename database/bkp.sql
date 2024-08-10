@@ -9,7 +9,8 @@ create table funcionario
     nome varchar(40) not null,
     telefone char(15) null,
     endereco varchar(70) not null,
-    created_at datetime not null
+    created_at datetime not null,
+    updated_at datetime null 
 
 );
 
@@ -22,7 +23,8 @@ create table departamento (
     codDepartamento int auto_increment not null,
     constraint uqDepto unique (nomeDepartamento),
     constraint primary key(codDepartamento),
-    created_at datetime not null
+    created_at datetime not null,
+    updated_at datetime null
 );
 
 alter table funcionario add codDepartamento int not null;
@@ -34,7 +36,8 @@ create table cargo
 (
     nomeCargo varchar(50) not null unique,
     codCargo int auto_increment not null primary key,
-    created_at datetime not null
+    created_at datetime not null,
+    updated_at datetime null
 );
     
 alter table funcionario add codCargo int not null;

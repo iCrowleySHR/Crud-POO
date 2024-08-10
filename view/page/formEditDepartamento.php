@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Departamento</title>
+  <script src="../js/datetime.js"></script>
   <?php include '../layout/head.php' ?>
 </head>
 <body>
@@ -27,6 +28,10 @@
             required
           >
         <?php } ?>
+      </fieldset>
+      <fieldset class="mb-3">
+        <label for="nome" class="form-label">Data e hora da alteração</label>
+        <input type="datetime-local" id="datetime" name="datetime" class="form-control" readonly>
       </fieldset>
       <button type="submit" class="btn btn-warning w-100">Editar</button>
     </form>

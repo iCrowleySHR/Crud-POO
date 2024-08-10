@@ -13,7 +13,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         'telefone'        => $_POST['telefone'],
         'endereco'        => $_POST['endereco'],
         'codDepartamento' => $_POST['codDepartamento'],
-        'codCargo'        => $_POST['codCargo']
+        'codCargo'        => $_POST['codCargo'],
+        'updated_at'      => $_POST['datetime']  
     ];
     $result = Funcionario::update('funcional = '.$_GET['cod'], $values);
     $value = Funcionario::read('funcional = '.$_GET['cod']);

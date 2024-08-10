@@ -35,7 +35,8 @@ class Funcionario
             'telefone'        => $values['telefone'],
             'endereco'        => $values['endereco'],
             'codDepartamento' => $values['codDepartamento'],
-            'codCargo'        => $values['codCargo']
+            'codCargo'        => $values['codCargo'],
+            'updated_at'      => $values['updated_at']  
         ]);
     }
 
