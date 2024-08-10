@@ -8,6 +8,7 @@
 </head>
 <body>
   <?php include '../../controller/exibeCargo.php'?>
+  <?php include_once '../../controller/DateFormatter.php' ?>
   <header>
     <?php include '../layout/navbar.php' ?>
   </header>

@@ -31,7 +31,7 @@
       </fieldset>
       <fieldset class="mb-2">
         <label for="datetime">Horário de criação</label>
-        <input type="datetime-local" id="datetime" name="datetime" class="form-control" required>
+        <input type="datetime-local" id="datetime" name="datetime" class="form-control" readonly>
       </fieldset>
       <fieldset class="mb-2">
         <label for="endereco" class="form-label">Endereço</label>

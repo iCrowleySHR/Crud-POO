@@ -21,7 +21,7 @@
       </fieldset>
       <fieldset class="mb-2">
         <label for="datetime">Horário de criação</label>
-        <input type="datetime-local" id="datetime" name="datetime" class="form-control" required>
+        <input type="datetime-local" id="datetime" name="datetime" class="form-control" readonly>
       </fieldset>
       <button type="submit" class="btn btn-success w-100">Cadastrar</button>
     </form>
