@@ -1,3 +1,4 @@
+
 <?php
 
 require '../../model/classCargo.php';
@@ -5,5 +6,9 @@ require '../../model/classCargo.php';
 $result = null;
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-    $result = Cargo::create(['nome' => $_POST['nome']]);
+    $values = [
+        'nome'       => $_POST['nome'],
+        'created_at' => $_POST['datetime']
+    ];
+    $result = Cargo::create($values);
 }

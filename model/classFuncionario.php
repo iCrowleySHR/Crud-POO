@@ -1,3 +1,4 @@
+
 <?php 
 require_once 'classConexao.php';
 
@@ -11,7 +12,8 @@ class Funcionario
             'telefone'        => $values['telefone'],
             'endereco'        => $values['endereco'],
             'codDepartamento' => $values['codDepartamento'],
-            'codCargo'        => $values['codCargo']
+            'codCargo'        => $values['codCargo'],
+            'created_at'      => $values['created_at']
         ]);
     }
 
@@ -33,7 +35,8 @@ class Funcionario
             'telefone'        => $values['telefone'],
             'endereco'        => $values['endereco'],
             'codDepartamento' => $values['codDepartamento'],
-            'codCargo'        => $values['codCargo']
+            'codCargo'        => $values['codCargo'],
+            'updated_at'      => $values['updated_at']  
         ]);
     }
 
@@ -42,3 +45,4 @@ class Funcionario
         return (new Conection('funcionario'))->delete($where);
     }
 }
+

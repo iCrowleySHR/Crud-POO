@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Cargo</title>
+  <script src="../js/datetime.js"></script>
   <?php include '../layout/head.php' ?>
 </head>
 <body>
@@ -18,24 +19,29 @@
         <label for="nome" class="form-label">Nome cargo</label>
         <input type="text" id="nome" name="nome" class="form-control" maxlength="50" placeholder="Cargo" required>
       </fieldset>
+      <fieldset class="mb-2">
+        <label for="datetime">Horário de criação</label>
+        <input type="datetime-local" id="datetime" name="datetime" class="form-control" readonly>
+      </fieldset>
       <button type="submit" class="btn btn-success w-100">Cadastrar</button>
     </form>
-    <?php if (isset($result) && $result) { echo '
+    <?php if (isset($result) && $result) { ?>
       <section class="position-relative" style="width: 400px;">
         <div class="alert alert-success alert-dismissible fade show position-absolute w-100" role="alert">
           <span>Cadastrado com sucesso!</span>
           <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
         </div>
       </section>
-    '; } else if (isset($result) && !$result) { echo '
+    <?php } else if (isset($result) && !$result) {  ?>
       <section class="position-relative" style="width: 400px;">
         <div class="alert alert-danger alert-dismissible fade show position-absolute w-100" role="alert">
           <span>Erro ao cadastrar!</span>
           <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
         </div>
       </section>
-    '; } ?>
+    <?php } ?>
   </main>
   <?php include '../layout/footer.php' ?>
 </body>
+
 </html>

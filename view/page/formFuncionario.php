@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Funcionário</title>
   <?php include '../layout/head.php' ?>
+  <script src="../js/datetime.js"></script>
 </head>
 <body>
   <?php include '../../controller/recebeFuncionario.php' ?>
@@ -27,6 +28,10 @@
       <fieldset class="mb-2">
         <label for="telefone" class="form-label">Telefone</label>
         <input type="tel" id="telefone" name="telefone" class="form-control" maxlength="15" placeholder="Telefone">
+      </fieldset>
+      <fieldset class="mb-2">
+        <label for="datetime">Horário de criação</label>
+        <input type="datetime-local" id="datetime" name="datetime" class="form-control" readonly>
       </fieldset>
       <fieldset class="mb-2">
         <label for="endereco" class="form-label">Endereço</label>

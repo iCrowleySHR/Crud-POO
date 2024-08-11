@@ -8,7 +8,9 @@ create table funcionario
     cpf char(11) not null unique,
     nome varchar(40) not null,
     telefone char(15) null,
-    endereco varchar(70) not null
+    endereco varchar(70) not null,
+    created_at datetime not null,
+    updated_at datetime null 
 
 );
 
@@ -20,7 +22,9 @@ create table departamento (
     nomeDepartamento varchar(45) not null,
     codDepartamento int auto_increment not null,
     constraint uqDepto unique (nomeDepartamento),
-    constraint primary key(codDepartamento)
+    constraint primary key(codDepartamento),
+    created_at datetime not null,
+    updated_at datetime null
 );
 
 alter table funcionario add codDepartamento int not null;
@@ -31,7 +35,9 @@ foreign key (codDepartamento) references departamento (codDepartamento);
 create table cargo 
 (
     nomeCargo varchar(50) not null unique,
-    codCargo int auto_increment not null primary key
+    codCargo int auto_increment not null primary key,
+    created_at datetime not null,
+    updated_at datetime null
 );
     
 alter table funcionario add codCargo int not null;

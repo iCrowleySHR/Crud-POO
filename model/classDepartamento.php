@@ -1,3 +1,4 @@
+
 <?php
 
 require_once 'classConexao.php';
@@ -7,7 +8,8 @@ class Departamento
     public static function create(array $values): bool 
     {
         return (new Conection('departamento'))->insert([
-            'nomeDepartamento' => $values['nome']
+            'nomeDepartamento' => $values['nome'],
+            'created_at'       => $values['created_at']
         ]);
     }
 
@@ -19,7 +21,8 @@ class Departamento
     public static function update(string $where, array $values): bool
     {
         return (new Conection('departamento'))->update($where, [
-            'nomeDepartamento' => $values['nome']
+            'nomeDepartamento' => $values['nome'],
+            'updated_at'       => $values['updated_at'] 
         ]);
     }
 

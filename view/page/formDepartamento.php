@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Departamento</title>
   <?php include '../layout/head.php' ?>
+  <script src="../js/datetime.js"></script>
 </head>
 <body>
   <?php include '../../controller/recebeDepartamento.php'?>
@@ -17,6 +18,10 @@
       <fieldset class="mb-3">
         <label for="nome" class="form-label">Nome departamento</label>
         <input type="text" id="nome" name="nome" class="form-control" maxlength="45" placeholder="Departamento" required>
+      </fieldset>
+      <fieldset class="mb-2">
+        <label for="datetime">Horário de criação</label>
+        <input type="datetime-local" id="datetime" name="datetime" class="form-control" readonly>
       </fieldset>
       <button type="submit" class="btn btn-success w-100">Cadastrar</button>
     </form>

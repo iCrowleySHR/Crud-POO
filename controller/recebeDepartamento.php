@@ -1,3 +1,4 @@
+
 <?php
 
 require '../../model/classDepartamento.php';
@@ -5,5 +6,9 @@ require '../../model/classDepartamento.php';
 $result = null;
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-    $result = Departamento::create(['nome' => $_POST['nome']]);
+    $values = [
+        'nome'       => $_POST['nome'],
+        'created_at' => $_POST['datetime']
+    ];
+    $result = Departamento::create($values);
 }

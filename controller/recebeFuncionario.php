@@ -1,3 +1,4 @@
+
 <?php
 include '../../model/classFuncionario.php';
 
@@ -10,7 +11,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         'telefone'        => $_POST['telefone'],
         'endereco'        => $_POST['endereco'],
         'codDepartamento' => $_POST['codDepartamento'],
-        'codCargo'        => $_POST['codCargo']
+        'codCargo'        => $_POST['codCargo'],
+        'created_at'      => $_POST['datetime']  
     ];
     $result = Funcionario::create($values);
 }
