@@ -21,6 +21,7 @@
             <tr>
               <th scope="col">#</th>
               <th scope="col">Nome</th>
+              <th scope="col">Foto</th>
               <th scope="col">Cpf</th>
               <th scope="col">Telefone</th>
               <th scope="col">Endereço</th>
@@ -36,7 +37,8 @@
             <?php foreach ($result as $value): ?>
                 <tr>
                     <th scope="row"><?= $value['funcional'] ?></th>
-                    <td><?= $value['nome'] ?></td>
+                    <td><?= $value['nome'] ?></td> 
+                    <td> <img src="<?= URL. "/view/img/funcionario/" . $value['image_url'] ?>" alt="foto do funcionario" width="100" /></td>
                     <td><?= $value['cpf'] ?></td>
                     <td><?= $value['telefone'] ?></td>
                     <td><?= $value['endereco'] ?></td>

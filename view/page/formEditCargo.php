@@ -16,8 +16,8 @@
     <form action="" method="post" class="mb-3" style="width: 400px;">
       <h3 class="fw-normal">Cargo</h3>
       <fieldset class="mb-3">
-        <label for="nome" class="form-label">Nome cargo</label>
         <?php if (isset($value)) { ?>
+          <label for="nome" class="form-label">Nome cargo</label>
           <input 
             id="nome" 
             name="nome" 
@@ -25,6 +25,17 @@
             class="form-control" 
             maxlength="50" 
             value="<?= $value[0]['nomeCargo'] ?>" 
+            required
+          >
+          <label for="salario" class="form-label">Salário</label>
+          <input 
+            id="salario" 
+            name="salario" 
+            type="number" 
+            class="form-control" 
+            max="999999.99" 
+            step="0.01"
+            value="<?= $value[0]['salario'] ?>" 
             required
           >
         <?php } ?>

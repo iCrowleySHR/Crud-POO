@@ -9,6 +9,7 @@ class Funcionario
         return (new Conection('funcionario'))->insert([
             'cpf'             => $values['cpf'],
             'nome'            => $values['nome'],
+            'image_url'       => $values['image_url'],
             'telefone'        => $values['telefone'],
             'endereco'        => $values['endereco'],
             'codDepartamento' => $values['codDepartamento'],
@@ -32,6 +33,7 @@ class Funcionario
         return (new Conection('funcionario'))->update($where, [
             'cpf'             => $values['cpf'],
             'nome'            => $values['nome'],
+            'image_url'       => $values['image_url'],
             'telefone'        => $values['telefone'],
             'endereco'        => $values['endereco'],
             'codDepartamento' => $values['codDepartamento'],

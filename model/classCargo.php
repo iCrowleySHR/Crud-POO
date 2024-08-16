@@ -9,7 +9,8 @@ class Cargo
     {
         return (new Conection('cargo'))->insert([
             'nomeCargo' => $values['nome'],
-            'created_at'=> $values['created_at']
+            'created_at'=> $values['created_at'],
+            'salario'   => $values['salario']
         ]);
     }
 
@@ -22,7 +23,8 @@ class Cargo
     {
         return (new Conection('cargo'))->update($where, [
             'nomeCargo'     => $values['nome'],
-            'updated_at'    => $values['updated_at']
+            'updated_at'    => $values['updated_at'],
+            'salario'       => $values['salario']
         ]);
     }
 
