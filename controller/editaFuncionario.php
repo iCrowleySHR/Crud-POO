@@ -16,7 +16,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         'codDepartamento' => $_POST['codDepartamento'],
         'codCargo'        => $_POST['codCargo'],
         'updated_at'      => $_POST['datetime'],
-        'image_url' =>    !empty($_FILES['image_url']['name']) ? ImageManager::sendFile($_FILES['image_url']) : Funcionario::read('funcional = '.$_GET['cod'])[0]['image_url'] 
+        'image_url' =>    !empty($_FILES['image_url']['name']) ? ImageManager::sendFileEmployee($_FILES['image_url']) : Funcionario::read('funcional = '.$_GET['cod'])[0]['image_url'] 
     ];
     $result = Funcionario::update('funcional = '.$_GET['cod'], $values);
     $value = Funcionario::read('funcional = '.$_GET['cod']);

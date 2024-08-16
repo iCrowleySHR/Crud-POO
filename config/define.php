@@ -1,3 +1,3 @@
 <?php
 
-define('URL', 'http://localhost/Crud-POO');
+define('URL', 'http://localhost//github/Crud-POO');

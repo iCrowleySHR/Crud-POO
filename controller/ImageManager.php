@@ -4,7 +4,7 @@ include_once __DIR__.'../../config/define.php';
 
 class ImageManager
 {
-    public static function sendFile($fileArray): string
+    public static function sendFileEmployee($fileArray): string
     {
         $dir = __DIR__."/../view/img/funcionario/";
 
