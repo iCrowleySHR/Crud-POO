@@ -22,6 +22,7 @@
               <tr>
                 <th scope="col">#</th>
                 <th scope="col">Nome</th>
+                <th scope="col">Salário</th>
                 <th scope="col">Data e Hora de criação</th>
                 <th scope="col">Data e Hora da última atualização</th>
                 <th scope="col">Opções</th>
@@ -33,6 +34,7 @@
                   <tr>
                       <th scope="row"><?= $value['codCargo'] ?></th>
                       <td><?= $value['nomeCargo'] ?></td>
+                      <td><?= $value['salario'] ?></td>
                       <td><?= DateFormatter::format($value['created_at']) ?></td>
                       <td><?= empty($value['updated_at']) ? 'Nunca alterado' : DateFormatter::format($value['updated_at']) ?></td>
                       <td class="d-flex">

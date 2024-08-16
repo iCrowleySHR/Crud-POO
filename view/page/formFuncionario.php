@@ -15,7 +15,7 @@
     <?php include '../layout/navbar.php' ?>
   </header>
   <main class="m-4 d-flex flex-column">
-    <form action="" method="post" class="mb-3" style="width: 400px;">
+    <form action="" method="post" class="mb-3" style="width: 400px;" enctype="multipart/form-data">
       <h3 class="fw-normal">Funcionario</h3>
       <fieldset class="mb-2">
         <label for="nome" class="form-label">Nome</label>
@@ -36,6 +36,10 @@
       <fieldset class="mb-2">
         <label for="endereco" class="form-label">Endereço</label>
         <input type="text" id="endereco" name="endereco" class="form-control" maxlength="70" placeholder="Endereço" required>
+      </fieldset>
+      <fieldset class="mb-2">
+        <label for="image_url" class="form-label">Imagem do funcionario</label>
+        <input type="file" id="image_url" name="image_url" class="form-control" placeholder="Imagem do funcionário">
       </fieldset>
       <fieldset class="mb-2">
         <label for="codDepartamento" class="form-label">Departamento</label>

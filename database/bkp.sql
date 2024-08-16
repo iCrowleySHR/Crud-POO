@@ -10,8 +10,8 @@ create table funcionario
     telefone char(15) null,
     endereco varchar(70) not null,
     created_at datetime not null,
-    updated_at datetime null 
-
+    updated_at datetime null,
+    image_url varchar(80) null
 );
 
 set sql_safe_updates=1;
@@ -35,6 +35,7 @@ foreign key (codDepartamento) references departamento (codDepartamento);
 create table cargo 
 (
     nomeCargo varchar(50) not null unique,
+    salario decimal(8,2) not null,
     codCargo int auto_increment not null primary key,
     created_at datetime not null,
     updated_at datetime null

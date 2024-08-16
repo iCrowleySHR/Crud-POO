@@ -19,6 +19,10 @@
         <label for="nome" class="form-label">Nome cargo</label>
         <input type="text" id="nome" name="nome" class="form-control" maxlength="50" placeholder="Cargo" required>
       </fieldset>
+      <fieldset class="mb-3">
+        <label for="salario" class="form-label">Salário</label>
+        <input type="number" id="salario" name="salario" class="form-control" max="999999.99" step="0.01" placeholder="Salário" required>
+      </fieldset>
       <fieldset class="mb-2">
         <label for="datetime">Horário de criação</label>
         <input type="datetime-local" id="datetime" name="datetime" class="form-control" readonly>
