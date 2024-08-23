@@ -8,7 +8,7 @@ class ImageManager
     {
         $dir = __DIR__."/../view/img/funcionario/";
 
-        if (!is_dir($dir)) return "Erro diretório: '{$dir}' não existente!";
+        if (!is_dir($dir)) mkdir($dir, 0777, true);
 
         $dirImage = $dir . $fileArray['name'];
 
