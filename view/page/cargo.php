@@ -67,7 +67,7 @@
               <?php endforeach; ?>
             <?php else: ?>
               <tr>
-                <td colspan="5">
+                <td colspan="6">
                   <div class="alert alert-danger alert-dismissible fade show w-100" role="alert">
                       <span>Nenhum cargo encontrado!</span>
                       <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
