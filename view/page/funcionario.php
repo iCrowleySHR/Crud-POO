@@ -38,7 +38,7 @@
                 <tr>
                     <th scope="row"><?= $value['funcional'] ?></th>
                     <td><?= $value['nome'] ?></td> 
-                    <td> <img src="<?= URL. "/view/img/funcionario/" . $value['image_url'] ?>" alt="foto do funcionario" width="100" /></td>
+                    <td> <img src="<?= URL. "/view/img/funcionario/" . $value['image_url']?>" style="border-radius:13px;" alt="foto do funcionario" width="100" /></td>
                     <td><?= $value['cpf'] ?></td>
                     <td><?= $value['telefone'] ?></td>
                     <td><?= $value['endereco'] ?></td>
@@ -46,12 +46,12 @@
                     <td><?= empty($value['updated_at']) ? 'Nunca alterado' : DateFormatter::format($value['updated_at']) ?></td>
                     <td><?= $value['nomeDepartamento'] ?></td>
                     <td><?= $value['nomeCargo'] ?></td>
-                    <td class="d-flex">
+                    <td>
                         <form action="formEditFuncionario.php" method="get">
                             <button 
                                 type="submit" 
                                 name="cod"
-                                class="btn btn-sm btn-warning me-2" 
+                                class="btn btn-sm btn-warning my-2" 
                                 data-bs-toggle="modal" 
                                 data-bs-target="#formEdit" 
                                 value="<?= $value['funcional'] ?>"
@@ -63,12 +63,24 @@
                             <button 
                                 type="submit" 
                                 name="cod"
-                                class="btn btn-sm btn-danger" 
+                                class="btn btn-sm btn-danger my-2" 
                                 data-bs-toggle="modal" 
                                 data-bs-target="#formDelete" 
                                 value="<?= $value['funcional'] ?>"
                             >
                                 Deletar
+                            </button>
+                        </form>
+                        <form action="relatorioFuncionario.php" method="get">
+                            <button 
+                                type="submit" 
+                                name="cod"
+                                class="btn btn-sm btn-primary mt-2" 
+                                data-bs-toggle="modal" 
+                                data-bs-target="#formDelete" 
+                                value="<?= $value['funcional'] ?>"
+                            >
+                                Relatório
                             </button>
                         </form>
                     </td>

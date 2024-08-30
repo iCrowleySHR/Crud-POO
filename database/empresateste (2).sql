@@ -3,14 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 30-Ago-2024 às 14:49
+-- Tempo de geração: 30-Ago-2024 às 16:52
 -- Versão do servidor: 10.4.24-MariaDB
 -- versão do PHP: 8.0.19
-
-
-CREATE DATABASE empresateste;
-
-USE empresateste;
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -109,7 +104,7 @@ CREATE TABLE `usuario` (
   `email` varchar(255) NOT NULL,
   `senha` varchar(255) NOT NULL,
   `funcional` int(11) NOT NULL,
-  `deleted` tinyint(1) DEFAULT false
+  `deleted` tinyint(1) DEFAULT 0
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
