@@ -7,6 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Relatório de Funcionário</title>
     <?php include '../layout/head.php' ?>
+    <?php include '../../controller/DateFormatter.php' ?>
     <link rel="stylesheet" href="../css/relatorio.css">
 </head>
 
@@ -28,8 +29,8 @@
                         <div><label>Cargo:</label> <?php echo $user['nomeCargo']; ?></div>
                         <div><label>Departamento:</label> <?php echo $user['nomeDepartamento']; ?></div>
                         <div><label>Salário:</label> R$ <?php echo number_format((float)$user['salario'], 2, ',', '.'); ?></div>
-                        <div><label>Data de Criação:</label> <?php echo $user['created_at']; ?></div>
-                        <div><label>Última Atualização:</label> <?php echo $user['updated_at'] ?? 'Não disponível'; ?></div>
+                        <div><label>Data de Criação:</label> <?= DateFormatter::format($user['created_at']) ?></div>
+                        <div><label>Última Atualização:</label> <?= empty($user['updated_at']) ? 'Nunca alterado' : DateFormatter::format($user['updated_at']) ?></div>
                     </div>
                 </div>
             </div>
