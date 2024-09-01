@@ -2,4 +2,4 @@
 
 session_start();
 
-define('URL', 'http://localhost/github/Crud-POO');
+define('URL', 'http://localhost/Crud-POO');

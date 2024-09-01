@@ -21,7 +21,7 @@
                 <input type="email" name="email" class="form-control" aria-describedby="emailHelp">
             </div>
             <div class="mb-3">
-                <label for="password" class="form-label">Password</label>
+                <label for="password" class="form-label">Digite sua senha:</label>
                 <input type="password"name="password" class="form-control">
             </div>
             <button type="submit" class="btn btn-primary">Enviar</button>
