@@ -6,7 +6,7 @@ body {
 }
 
 .container {
-    width: 80%;
+    width: 60%;
     margin: auto;
     overflow: hidden;
 }
@@ -25,13 +25,13 @@ body {
 .report {
     background: #fff;
     padding: 20px;
-    margin-top: 20px;
+    margin-top: 10px;
     border-radius: 5px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
 .report img {
-    max-width: 100px;
+    max-width: 380px;
     border-radius: 50%;
     margin-right: 20px;
 }
@@ -43,6 +43,11 @@ body {
 
 .report-details div {
     margin-bottom: 10px;
+}
+
+.report-details ul > li {
+    font-size: 17px;
+    margin-bottom: 3px;
 }
 
 .report-details label {

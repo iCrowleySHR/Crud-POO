@@ -1,12 +1,15 @@
 
 <?php 
 require_once 'classConexao.php';
+require_once 'classUsuario.php';
 
 class Funcionario
 {
     public static function create(array $values): bool
     { 
-        return (new Conection('funcionario'))->insert([
+        $funcionario = new Conection('funcionario');
+
+        $funcionario->insert([
             'cpf'             => $values['cpf'],
             'nome'            => $values['nome'],
             'image_url'       => $values['image_url'],
@@ -16,6 +19,11 @@ class Funcionario
             'codCargo'        => $values['codCargo'],
             'created_at'      => $values['created_at']
         ]);
+
+        $funcionario = ($funcionario->select(null, 'funcional DESC', 1)->fetch(PDO::FETCH_ASSOC));
+        $values['funcional'] = $funcionario['funcional'];
+
+        return Usuario::create($values);
     }
 
     public static function read(string $where = null, string $order = null,  string $limit = null, string $fields = '*'): array

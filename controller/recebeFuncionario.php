@@ -14,10 +14,10 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         'codDepartamento' => $_POST['codDepartamento'],
         'codCargo'        => $_POST['codCargo'],
         'created_at'      => $_POST['datetime'],
-        'image_url'       => ImageManager::sendFileEmployee($_FILES['image_url']) 
+        'image_url'       => ImageManager::save("view/img/funcionario", $_FILES['image_url']),
+        'email'           => $_POST['email'],
+        'senha'           => $_POST['password']
     ];
 
     $result = Funcionario::create($values);
 }
-
-

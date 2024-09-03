@@ -4,16 +4,18 @@ include_once __DIR__.'../../config/define.php';
 
 class ImageManager
 {
-    public static function sendFileEmployee($fileArray): string
+    public static function save(string $dir = "view/img", array $image): string
     {
-        $dir = __DIR__."/../view/img/funcionario/";
+        $dirRoot = __DIR__. "/../";
+        
+        $dirFull = $dirRoot . $dir;
 
-        if (!is_dir($dir)) mkdir($dir, 0777, true);
+        if (!is_dir($dirFull)) mkdir($dirFull, 0777, true);
 
-        $dirImage = $dir . $fileArray['name'];
+        $newDirImage = $dir . "/" . time() . "_" . $image['name'];
+        
+        move_uploaded_file($image['tmp_name'], $dirRoot . $newDirImage);
 
-        move_uploaded_file($fileArray['tmp_name'], $dirImage);
-
-        return $fileArray['name'];
+        return $newDirImage;
     }
 }
