@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Cargo</title>
   <?php include '../layout/head.php' ?>
+  <?php include '../layout/private.php' ?>
 </head>
 <body>
   <?php include '../../controller/exibeCargo.php'?>
@@ -34,7 +35,7 @@
                   <tr>
                       <th scope="row"><?= $value['codCargo'] ?></th>
                       <td><?= $value['nomeCargo'] ?></td>
-                      <td><?= $value['salario'] ?></td>
+                      <td>R$ <?= number_format((float)$value['salario'], 2, ',', '.') ?></td>
                       <td><?= DateFormatter::format($value['created_at']) ?></td>
                       <td><?= empty($value['updated_at']) ? 'Nunca alterado' : DateFormatter::format($value['updated_at']) ?></td>
                       <td class="d-flex">
@@ -67,7 +68,7 @@
               <?php endforeach; ?>
             <?php else: ?>
               <tr>
-                <td colspan="5">
+                <td colspan="6">
                   <div class="alert alert-danger alert-dismissible fade show w-100" role="alert">
                       <span>Nenhum cargo encontrado!</span>
                       <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>

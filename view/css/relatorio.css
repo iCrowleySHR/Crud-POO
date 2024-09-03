@@ -1,0 +1,55 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}
+
+.container {
+    width: 60%;
+    margin: auto;
+    overflow: hidden;
+}
+
+.header {
+    background: #333;
+    color: #fff;
+    padding: 20px 0;
+    text-align: center;
+}
+
+.header h1 {
+    margin: 0;
+}
+
+.report {
+    background: #fff;
+    padding: 20px;
+    margin-top: 10px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.report img {
+    max-width: 380px;
+    border-radius: 50%;
+    margin-right: 20px;
+}
+
+.report-details {
+    display: flex;
+    align-items: center;
+}
+
+.report-details div {
+    margin-bottom: 10px;
+}
+
+.report-details ul > li {
+    font-size: 17px;
+    margin-bottom: 3px;
+}
+
+.report-details label {
+    font-weight: bold;
+}

@@ -1,3 +1,5 @@
+<?php include_once __DIR__.'../../../controller/removeLogin.php' ?>
+
 <nav class="navbar navbar-expand-lg bg-dark-subtle shadow-sm">
   <div class="container-fluid">
     <a class="navbar-brand" href="<?= URL ?>/">Atividade POO</a>
@@ -36,6 +38,11 @@
             <li><a class="dropdown-item" href="<?= URL ?>/view/page/formFuncionario.php">Cadastrar</a></li>
           </ul>
         </li>
+        <?php if (isset($_SESSION['usuario'])): ?>
+          <form action="" method="post" class="d-flex align-itens-center">
+            <button type="submit" style="border: none;background: transparent;" name="removeLoginUsuario">Sair</button>
+          </form>
+        <?php endif; ?>
       </ul>
     </div>
   </div>

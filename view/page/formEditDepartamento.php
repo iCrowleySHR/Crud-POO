@@ -6,6 +6,7 @@
   <title>Departamento</title>
   <script src="../js/datetime.js"></script>
   <?php include '../layout/head.php' ?>
+  <?php include '../layout/private.php' ?>
 </head>
 <body>
   <?php include '../../controller/editaDepartamento.php'?>

@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Departamento</title>
   <?php include '../layout/head.php' ?>
+  <?php include '../layout/private.php' ?>
   <script src="../js/datetime.js"></script>
 </head>
 <body>

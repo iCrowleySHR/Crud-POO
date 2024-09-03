@@ -1,6 +1,7 @@
 <?php
 
-class DateFormatter {
+class DateFormatter 
+{
     private static $months = [
         1 => "Janeiro",
         2 => "Fevereiro",
@@ -44,6 +45,3 @@ class DateFormatter {
         return $formattedDate;
     }
 }
-
-
-?>
