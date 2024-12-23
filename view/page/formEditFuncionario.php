@@ -1,3 +1,6 @@
+<?php include_once __DIR__.'/../../config/define.php' ?>
+<?php include '../layout/privateAdmin.php' ?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -5,8 +8,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Funcionário</title>
   <script src="../js/datetime.js"></script>
+  <script src="../js/cpf.js" defer></script>
+  <script src="../js/phone.js" defer></script>
   <?php include '../layout/head.php' ?>
-  <?php include '../layout/private.php' ?>
 </head>
 <body>
   <?php include '../../controller/editaFuncionario.php'?>
@@ -25,7 +29,7 @@
         </fieldset>
         <fieldset class="mb-2">
           <label for="cpf" class="form-label">CPF</label>
-          <input id="cpf" name="cpf" type="text" class="form-control" maxlength="11" value="<?= $value[0]['cpf']?>" required>
+          <input id="cpf" name="cpf" type="text" class="form-control" maxlength="14" value="<?=$value[0]['cpf']?>" required readonly>
         </fieldset>
         <fieldset class="mb-2">
           <label for="telefone" class="form-label">Telefone</label>

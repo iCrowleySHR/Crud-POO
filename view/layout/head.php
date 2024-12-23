@@ -1,4 +1,5 @@
-<?php include_once __DIR__.'../../../config/define.php' ?>
+<!-- Favicon -->
+<link rel="shortcut icon" href="<?= URL ?>/favicon.ico" type="image/x-icon">
 
 <!-- Google fonts (Fira Sans) -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -11,4 +12,3 @@
 
 <!-- Link Css -->
 <link rel="stylesheet" href="<?= URL ?>/view/css/style.css">
-
